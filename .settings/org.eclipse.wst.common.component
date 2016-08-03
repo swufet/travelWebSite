@@ -2,6 +2,7 @@
     <wb-module deploy-name="travel.com">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/config"/>
         <property name="context-root" value="travel.com"/>
         <property name="java-output-path" value="/travel.com/build/classes"/>
     </wb-module>
