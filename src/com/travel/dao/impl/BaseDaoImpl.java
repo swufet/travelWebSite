@@ -6,6 +6,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -69,6 +70,7 @@ public abstract class BaseDaoImpl implements BaseDao {
 	@Override
 	public List getAll() {
 		List list = this.createCriteria()
+				.addOrder(Order.desc("id"))
 				.list();
 		return list.size() > 0 ? list : null;
 		

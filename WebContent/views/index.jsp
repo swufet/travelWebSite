@@ -21,10 +21,13 @@
 					<td><input type="password" placeholder="请输入密码" required="required" name="password"></td>
 				</tr>
 					<tr>
-						<td colspan="2">
-							<c:if test="${loginSuccess == false}">
-							<div style="color:red">登录失败，请检查用户名和密码！</div>
-							</c:if>
+						<td colspan="2" style="padding:0;height:21px;">
+							
+							<div class="login-info">
+								<c:if test="${loginSuccess == false}">
+								登录失败，请检查用户名和密码！
+								</c:if>
+							</div>
 						</td>
 					</tr>
 				<tr>

@@ -23,6 +23,37 @@ public class TravelLines {
 	private String coverImgPath; //列表那里的图片
 	
 	@Column(length=50)
-	private String Title; //标题	
-	
+	private String title; //标题	
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getLineContent() {
+		return lineContent;
+	}
+
+	public void setLineContent(String lineContent) {
+		this.lineContent = lineContent;
+	}
+
+	public String getCoverImgPath() {
+		return coverImgPath;
+	}
+
+	public void setCoverImgPath(String coverImgPath) {
+		this.coverImgPath = coverImgPath;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
 }

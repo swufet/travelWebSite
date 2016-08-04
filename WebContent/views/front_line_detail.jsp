@@ -5,12 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-		<div class="mynavbar">
-			<a class="navitem item-active" href="travel_lines.do">旅游路线</a>
-			<a class="navitem" href="#">员工风采</a>
-			<a class="logout" href="exit.do">登出</a>
-		</div>
+	${line.lineContent}
 </body>
 </html>

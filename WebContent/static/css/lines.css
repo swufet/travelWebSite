@@ -1,0 +1,13 @@
+.one-line{
+	text-decoration: none;
+	color: #F5AF73;
+	text-align: justify;
+	margin: 20px;
+}
+.one-line-img{
+	width: 100%;
+	height: 150px;
+	background-color: red;
+	background-position: center;
+	background-size: cover;
+}

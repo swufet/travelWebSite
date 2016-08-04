@@ -103,7 +103,7 @@ hr{
 }
 .title-preview-img{
 	width: 100%;
-	height: 80px;
+	height: 150px;
 	background-position: center;
 	background-size: cover;
 }
@@ -144,7 +144,10 @@ hr{
 .login-con tr>td:first-child{
 	text-align: right;
 }
-
+.login-con tr>td:last-child{
+	text-align: right;
+	width: 200px;
+}
 .full-bg{
 	background-image: url(../img/loginbg.jpg);
 	background-position: center;
@@ -173,5 +176,15 @@ hr{
 	background-position: center;
 	background-size: cover;
 	width: 388px;
-	height: 80px;
+	height: 150px;
+}
+.one-line-title{
+	color: #F5AF73;
+}
+.login-info{
+	color:red;
+	margin:0;
+}
+.title-preview-text{
+	color: #F5AF73;
 }
