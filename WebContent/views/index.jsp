@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>login</title>
+		<title>欢迎登陆</title>
 		<link rel="stylesheet" type="text/css" href="static/css/mystyle.css"/>
 	</head>
 	<body class="full-bg bg-gray">

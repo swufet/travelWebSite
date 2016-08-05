@@ -16,7 +16,7 @@ public class TravelLines {
 	@Column
 	private int id;	//lineId
 	
-	@Column(length=256)
+	@Column(length=100000)
 	private String lineContent; //主要内容
 	
 	@Column(length=150)

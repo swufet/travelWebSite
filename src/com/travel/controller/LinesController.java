@@ -15,8 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.opensymphony.xwork2.ActionContext;
-import com.travel.dao.TravelLinesDao;
+import com.travel.dao.*;
 import com.travel.entity.*;
+import com.travel.util.*;
 @RequestMapping("/")
 @Controller
 public class LinesController {
@@ -25,6 +26,9 @@ public class LinesController {
 
 	@Autowired
 	TravelLinesDao travelLinesDao;
+	
+	@Autowired
+	PwdDao pwdDao;
 	
 	
 	//登录权限验证
@@ -42,33 +46,36 @@ public class LinesController {
 	//登录页面
 	@RequestMapping(value = "index.do")
 	public String index(HttpServletRequest req){
+		if(pwdDao.getById(1)==null){
+			CipherUtil cipher = new CipherUtil();  
+			String pwd="travel";
+			String pwdMd5=cipher.generatePassword(pwd);
+			Pwd newpwd=new Pwd();
+			newpwd.setPwd(pwdMd5);
+			pwdDao.save(newpwd);
+			pwdDao.commit();
+		}
 		return "index";
 	}
 	
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "login.do")
-	public void login(HttpServletRequest req, HttpServletResponse res, Map model){
+	public String login(HttpServletRequest req, HttpServletResponse res, Map model){
 		res.setContentType("text/html;charset=UTF-8");
+		HttpSession session=req.getSession();
 		String userName=req.getParameter("username");
 		String password=req.getParameter("password");
-		HttpSession session=req.getSession();
-		if((!userName.equals("admin"))||(!password.equals("travel"))){
-			model.put("loginSuccess", false);
-			try {
-				res.sendRedirect("index.do");
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+		Pwd myPwd=(Pwd) pwdDao.getById(1);
+		String passwordMd5=myPwd.getPwd();
+		CipherUtil cipher = new CipherUtil();  
+		if(userName.equals("admin")&&cipher.validatePassword(passwordMd5, password)){
+			session.setAttribute("authorization", true);
+			model.put("loginSuccess", true);
+			return "travel_lines";
 		}
 		else{
-			model.put("loginSuccess", true);
-			try {
-				session.setAttribute("authorization", true);
-				res.sendRedirect("travel_lines.do");
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			model.put("loginSuccess", false);
+			return "index";
 		}
 	}
 	
@@ -152,5 +159,40 @@ public class LinesController {
 		return "front_line_detail";
 	}
 	
+	//进入更改密码页面
+	@RequestMapping(value = "change_pwd.do")
+	public String changePwd(HttpServletRequest req, HttpServletResponse res){
+		checkAuth(req,res);
+		return "change_pwd";
+	}
 	
+	//执行更改密码
+	@RequestMapping(value = "save_change_pwd.do")
+	public String saveChangePwd(HttpServletRequest req, HttpServletResponse res, Map model){
+		checkAuth(req,res);
+		String message="";
+		String oldPwd=req.getParameter("oldPwd");
+		String newPwd=req.getParameter("newPwd");
+		String newPwd2=req.getParameter("newPwd2");
+		if(!newPwd.equals(newPwd2)){
+			message="两次新密码不一致，请重新输入！";
+		}
+		else{
+			CipherUtil cipher = new CipherUtil();  
+			Pwd myPwd=(Pwd) pwdDao.getById(1);
+			String passwordMd5=myPwd.getPwd();
+			if(!cipher.validatePassword(passwordMd5, oldPwd)){
+				message="原密码错误，请重新输入！";
+			}
+			else{
+				String pwdMd5=cipher.generatePassword(newPwd);
+				myPwd.setPwd(pwdMd5);
+				pwdDao.update(myPwd);
+				pwdDao.commit();
+				message="更改密码成功！";
+			}
+		}
+		model.put("message",message);
+		return "change_pwd";
+	}
 }

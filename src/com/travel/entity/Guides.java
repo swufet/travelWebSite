@@ -25,7 +25,7 @@ public class Guides {
 	@Column(length=150)
 	private String coverImgPath; //导游头像图片
 	
-	@Column(length=256)
+	@Column(length=100000)
 	private String introduction; //导游介绍
 
 	public int getId() {

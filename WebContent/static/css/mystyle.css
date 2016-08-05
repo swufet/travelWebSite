@@ -222,7 +222,12 @@ hr{
 	padding: 20px;
 }
 .one-worker-con{
+	display:block;
+	float:left;
 	width:49%;
+	height: 200px;
+	margin-right:3px;
+	margin-top:3px;
 }
 .one-worker{
 	display: inline-block;
@@ -275,4 +280,32 @@ hr{
 	margin-right:10px;
 	background-color: #FFFFFF;
 	height:29px;
+}
+.change-pwd{
+	line-height: 80px;
+	margin-right:20px;
+}
+@keyframes ani-out{
+    0%{top: 0; opacity: 1;}
+    100%{top: -50px; opacity: 0;}
+}
+@-webkit-keyframes ani-out{
+    0%{top: 0; opacity: 0;}
+    100%{top: -50; opacity: 1;}
+}
+.ani-out{
+    animation: ani-out 0.5s linear;
+    -webkit-animation: ani-out 0.5s linear;
+}
+@keyframes ani-out{
+    0%{top: 0; opacity: 1;}
+    100%{top: -50px; opacity: 0;}
+}
+@-webkit-keyframes ani-out{
+    0%{top: 0; opacity: 0;}
+    100%{top: -50; opacity: 1;}
+}
+.ani-out{
+    animation: ani-out 0.5s linear;
+    -webkit-animation: ani-out 0.5s linear;
 }

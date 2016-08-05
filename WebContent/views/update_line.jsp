@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>setTravelLine</title>
+		<title>更新线路--${line.title}的信息</title>
 		<link rel="stylesheet" type="text/css" href="static/css/mystyle.css"/>
 	</head>
 	<body class="bg-gray">

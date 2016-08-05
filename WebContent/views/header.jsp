@@ -11,6 +11,7 @@
 			<a class="navitem item-active" href="travel_lines.do">旅游路线</a>
 			<a class="navitem" href="guides.do">导游风采</a>
 			<a class="logout" href="exit.do">登出</a>
+			<a class="change-pwd f-right" href="change_pwd.do">修改密码</a>
 		</div>
 </body>
 </html>
