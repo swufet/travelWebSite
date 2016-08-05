@@ -6,4 +6,5 @@ import com.travel.entity.Guides;
 
 public interface GuidesDao extends BaseDao{
 	public List<Guides> getAllByName();
+	public List<Guides> getByName(String name);
 }

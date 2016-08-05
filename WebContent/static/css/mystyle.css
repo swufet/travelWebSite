@@ -12,6 +12,11 @@ body {
   width: 100%;
   height: 100%;
 }
+@media (max-width: 800px) {
+  body {
+    padding: 0 8px;
+  }
+}
 .bg-gray{
   background-color: #cccccc;
 }
@@ -42,6 +47,15 @@ input[type=text], input[type=password]{
 }
 .mybtn:hover{
 	background-color: #000000;
+}
+.yellow{
+	color:#F5AF73;
+}
+.text-center{
+	text-align:center;
+}
+.hasnav{
+	padding-top:60px;
 }
 .clear-both{
 	clear: all;
@@ -209,24 +223,24 @@ hr{
 }
 .one-worker-con{
 	width:49%;
-	padding: 0 10px;
 }
 .one-worker{
 	display: inline-block;
 	width: 100%;
-	height: 240px;
-	margin: 3px 0;
+	height: 200px;
+	margin: 3px;
 	border: 1px solid #F5AF73;
 	text-align: center;
 	border-radius: 10px;
+	color: #F5AF73;
 }
 .one-worker:hover{
 	background-color: #F5AF73;
 	color:#FFFFFF;
 }
 .one-worker-img{
-	width: 150px;
-	height: 150px;
+	width: 120px;
+	height: 120px;
 	border-radius: 50%;
 	background-position: center;
 	background-size: cover;
@@ -242,4 +256,23 @@ hr{
 	border: 1px solid #F5AF73;
 	text-align: center;
 	border-radius: 10px;
+}
+.guide-name-con{
+	border-top:2px solid #F5AF73;
+	border-bottom:2px solid #F5AF73;
+}
+.serch-nav{
+	position:fixed;
+	width: 100%;
+	height:50px;
+	top:0;
+	left:0;
+	padding:10px 20px;
+	background-color: #F5AF73;
+	box-shadow: 2px 2px 5px #000000;
+}
+.serch-text{
+	margin-right:10px;
+	background-color: #FFFFFF;
+	height:29px;
 }
