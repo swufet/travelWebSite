@@ -14,12 +14,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.travel.dao.GuidesDao;
 import com.travel.dao.TravelLinesDao;
 import com.travel.entity.*;
 @RequestMapping("/")
 @Controller
-public class ViewController {
+public class LinesController {
 	
 	private static final List TravelLines = null;
 
@@ -29,6 +30,19 @@ public class ViewController {
 	@Autowired
 	GuidesDao guidesDao;
 	
+	
+	//登录权限验证
+	private void checkAuth(HttpServletRequest req, HttpServletResponse res){
+		HttpSession session=req.getSession();
+		Object auth=session.getAttribute("authorization");
+		if(auth == null){
+			try {
+				res.sendRedirect("index.do");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 	//登录页面
 	@RequestMapping(value = "index.do")
 	public String index(HttpServletRequest req){
@@ -64,7 +78,8 @@ public class ViewController {
 	
 	//后台首页
 	@RequestMapping(value = "travel_lines.do")
-	public String adminIndex(Map model){
+	public String adminIndex(HttpServletRequest req, HttpServletResponse res,Map model){
+		checkAuth(req,res);
 		List list = (List<TravelLines>)travelLinesDao.getAll();
 		model.put("lines", list);
 		return "travel_lines";
@@ -72,7 +87,8 @@ public class ViewController {
 	
 	//进入增加旅游路线页面
 	@RequestMapping(value = "add_new_line.do")
-	public String addLine(Map model){
+	public String addLine(HttpServletRequest req, HttpServletResponse res,Map model){
+		checkAuth(req,res);
 		TravelLines line=new TravelLines();
 		travelLinesDao.save(line);
 		model.put("line", line);
@@ -81,7 +97,8 @@ public class ViewController {
 	
 	//进入更新旅游路线页面
 	@RequestMapping(value = "update_line_{id}.do")
-	public String updateLine(@PathVariable int id, Map model){
+	public String updateLine(@PathVariable int id, HttpServletRequest req, HttpServletResponse res,Map model){
+		checkAuth(req,res);
 		TravelLines line=(TravelLines) travelLinesDao.getById(id);
 		model.put("line", line);
 		return "update_line";
@@ -89,7 +106,8 @@ public class ViewController {
 	
 	//删除一个旅游路线
 	@RequestMapping(value = "delete_line_{id}.do")
-	public void deleteLine(@PathVariable int id, HttpServletResponse res){
+	public void deleteLine(@PathVariable int id,HttpServletRequest req, HttpServletResponse res){
+		checkAuth(req,res);
 		travelLinesDao.deleteById(id);
 		travelLinesDao.commit();
 //		try {
@@ -101,7 +119,8 @@ public class ViewController {
 	
 	//更新旅游路线
 	@RequestMapping(value = "save_line_{id}.do")
-	public String saveUpdateLine_(@PathVariable int id, Map model, TravelLines line,HttpServletRequest req){
+	public String saveUpdateLine_(@PathVariable int id, Map model, TravelLines line,HttpServletRequest req, HttpServletResponse res){
+		checkAuth(req,res);
 		line.setId(id);
 		travelLinesDao.update(line);
 		travelLinesDao.commit();
