@@ -9,7 +9,7 @@
 <body>
 		<div class="mynavbar">
 			<a class="navitem item-active" href="travel_lines.do">旅游路线</a>
-			<a class="navitem" href="#">员工风采</a>
+			<a class="navitem" href="guides.do">导游风采</a>
 			<a class="logout" href="exit.do">登出</a>
 		</div>
 </body>

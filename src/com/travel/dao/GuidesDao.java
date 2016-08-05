@@ -1,5 +1,9 @@
 package com.travel.dao;
 
-public interface GuidesDao extends BaseDao{
+import java.util.List;
 
+import com.travel.entity.Guides;
+
+public interface GuidesDao extends BaseDao{
+	public List<Guides> getAllByName();
 }

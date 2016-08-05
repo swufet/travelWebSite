@@ -8,7 +8,7 @@
 		<title>login</title>
 		<link rel="stylesheet" type="text/css" href="static/css/mystyle.css"/>
 	</head>
-	<body class="full-bg">
+	<body class="full-bg bg-gray">
 		<form class="login-con" method="post" action="login.do">
 			<h1>后台管理界面</h1>
 			<table>

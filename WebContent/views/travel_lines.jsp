@@ -8,7 +8,7 @@
 		<title>TravelLines</title>
 		<link rel="stylesheet" type="text/css" href="static/css/mystyle.css"/>
 	</head>
-	<body>
+	<body class="bg-gray">
 		<jsp:include page="header.jsp"></jsp:include>
 		<div class="lines-con">
 			<a class="mybtn" href="add_new_line.do">添加路线</a>

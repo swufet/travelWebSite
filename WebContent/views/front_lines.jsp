@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>front_lines</title>
+		<title>所有旅游线路</title>
 		<link rel="stylesheet" type="text/css" href="static/css/lines.css"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>

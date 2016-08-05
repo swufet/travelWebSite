@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.opensymphony.xwork2.ActionContext;
-import com.travel.dao.GuidesDao;
 import com.travel.dao.TravelLinesDao;
 import com.travel.entity.*;
 @RequestMapping("/")
@@ -26,9 +25,6 @@ public class LinesController {
 
 	@Autowired
 	TravelLinesDao travelLinesDao;
-	
-	@Autowired
-	GuidesDao guidesDao;
 	
 	
 	//登录权限验证
@@ -119,7 +115,7 @@ public class LinesController {
 	
 	//更新旅游路线
 	@RequestMapping(value = "save_line_{id}.do")
-	public String saveUpdateLine_(@PathVariable int id, Map model, TravelLines line,HttpServletRequest req, HttpServletResponse res){
+	public String saveUpdateLine(@PathVariable int id, Map model, TravelLines line,HttpServletRequest req, HttpServletResponse res){
 		checkAuth(req,res);
 		line.setId(id);
 		travelLinesDao.update(line);

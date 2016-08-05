@@ -8,7 +8,7 @@
 		<title>setTravelLine</title>
 		<link rel="stylesheet" type="text/css" href="static/css/mystyle.css"/>
 	</head>
-	<body>
+	<body class="bg-gray">
 		<jsp:include page="header.jsp"></jsp:include>
 		<form class="left-content" action="save_line_${line.id}.do" method="post">
 			<label>请输入路线标题：</label><br />
