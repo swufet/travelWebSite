@@ -32,7 +32,7 @@
 		<property name="driverClass" value="org.hsqldb.jdbcDriver" />
 		<property name="jdbcUrl" value="jdbc:hsqldb:hsql://localhost/traveldb;shutdown=true" />
 		<property name="user" value="SA" />
-		<property name="password" value="47c593a5-1a6c-4e91-a225-ff36af3536a5" />
+		<property name="password" value="" />
 		<!-- c3p0 配置 -->
 		<!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
 		<property name="acquireIncrement" value="3" />
@@ -92,7 +92,7 @@
 				<!-- 这里需要再配置一下数据库用户名和密码 -->
 				<!-- 数据库连接 -->
 				<prop key="hibernate.connection.username">SA</prop>
-				<prop key="hibernate.connection.password">47c593a5-1a6c-4e91-a225-ff36af3536a5</prop>
+				<prop key="hibernate.connection.password"></prop>
 				
 				<!-- 方言 -->
 				<prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
