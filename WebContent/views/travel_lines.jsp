@@ -11,7 +11,7 @@
 	<body class="bg-gray">
 		<jsp:include page="header.jsp"></jsp:include>
 		<div class="lines-con">
-			<a class="mybtn" href="add_new_line.do">添加路线</a>
+			<a class="mybtn" href="add_new_line.do">添加资料</a>
 			<c:forEach items="${lines }" var="line">
 			<div class="one-line" id="line-${line.id }">
 				<a href="javascript:deleteLine(${line.id})" class="mybtn f-right one-line-operate">删除</a>

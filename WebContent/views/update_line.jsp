@@ -21,7 +21,7 @@
 			<input type="hidden" id="coverImgPath" name="coverImgPath" value="${line.coverImgPath }" >
 			</c:if>
 			<c:if test="${line.coverImgPath eq null}">
-			<input type="hidden" id="coverImgPath" name="coverImgPath" value="null" >
+			<input type="hidden" id="coverImgPath" name="coverImgPath" value="static/img/linebg.jpg" >
 			</c:if>
 			<hr />
 			<label>路线正文内容：</label><br />
@@ -38,7 +38,7 @@
 					<div id="title-preview-img" class="title-preview-img" style="background-image: url(${line.coverImgPath})"></div>
 					</c:if>
 					<c:if test="${line.coverImgPath eq null}">
-					<div id="title-preview-img" class="title-preview-img" ></div>
+					<div id="title-preview-img" class="title-preview-img" style="background-image: url(static/img/linebg.jpg)"></div>
 					</c:if>
 					<div id="title-preview-text" class="title-preview-text">${line.title }</div>
 				</div>

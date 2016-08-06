@@ -71,6 +71,8 @@ public class LinesController {
 		if(userName.equals("admin")&&cipher.validatePassword(passwordMd5, password)){
 			session.setAttribute("authorization", true);
 			model.put("loginSuccess", true);
+			List list = (List<TravelLines>)travelLinesDao.getAll();
+			model.put("lines", list);
 			return "travel_lines";
 		}
 		else{
