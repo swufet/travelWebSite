@@ -86,7 +86,7 @@ input[type=text], input[type=password]{
 }
 .left-content{
 	position: absolute;
-	width: 480px;
+	width: 600px;
 	left: 80px;
 	margin: 20px;
 	padding: 20px;
@@ -119,7 +119,6 @@ hr{
 	text-align: left;
 }
 .iphone{
-	border: 1px solid #000000;
 	padding: 20px 5px;
 	border-radius: 5px;
 	width: 400px;
@@ -210,7 +209,7 @@ hr{
 }
 .guides-con{
 	width:100%;
-	height:600px;
+	height:400px;
 	overflow:auto;
 }
 .workers-con{
@@ -266,9 +265,7 @@ hr{
 }
 .guide-preview{
 	width:49%;
-	height: 240px;
 	margin: 3px 0;
-	border: 1px solid #F5AF73;
 	text-align: center;
 	border-radius: 10px;
 }

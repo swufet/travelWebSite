@@ -6,25 +6,25 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>更新线路--${line.title}的信息</title>
+		<link rel="stylesheet" type="text/css" href="static/ueditor/themes/default/css/umeditor.css"/>
 		<link rel="stylesheet" type="text/css" href="static/css/mystyle.css"/>
 	</head>
 	<body class="bg-gray">
 		<jsp:include page="header.jsp"></jsp:include>
 		<form class="left-content" action="save_line_${line.id}.do" method="post">
-			<label>请输入路线标题：</label><br />
+			<label>请输入资料标题：</label><br />
 			<input id="line-title" type="text" placeholder="请输入路线标题" name="title" value="${line.title }"/><br />
-			<hr />
-			<label>选择该路线的封面图片：</label><br />
-			<input type="file" value="s" width="500" name="file" id="upfile"/><br />
-			<a class="uploadImg mybtn" id="uploadbtn">上传并预览</a>
+			<label>选择该资料的封面图片：</label>
+			<input type="file" value="s" name="file" id="upfile"/>
+			<a class="uploadImg mybtn" id="uploadbtn">上传图片并预览</a>
 			<c:if test="${line.coverImgPath ne null}">
 			<input type="hidden" id="coverImgPath" name="coverImgPath" value="${line.coverImgPath }" >
 			</c:if>
 			<c:if test="${line.coverImgPath eq null}">
 			<input type="hidden" id="coverImgPath" name="coverImgPath" value="static/img/linebg.jpg" >
 			</c:if>
-			<hr />
-			<label>路线正文内容：</label><br />
+			<br>
+			<label>资料正文内容：</label><br />
 			<textarea class="text-content" id="intr-editor" name="lineContent">
 			${line.lineContent }
 			</textarea>
@@ -49,13 +49,12 @@
 				<div class="iphone content-preview">
 					${line.lineContent }
 				</div>
-				<hr />
 			</div>
 		</div>
 	</body>
 	<script src="static/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="static/ueditor/ueditor.config.js" type="text/javascript" charset="utf-8"></script>
-	<script src="static/ueditor/ueditor.all.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/ueditor/umeditor.config.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/ueditor/umeditor.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="static/js/jquery.jsonrpc.js" type="text/javascript" charset="utf-8"></script>
 	<script src="static/js/ajaxfileupload.js" type="text/javascript" charset="utf-8"></script>
 	<script src="static/js/travelLine.js" type="text/javascript" charset="utf-8"></script>

@@ -1,23 +1,5 @@
 //实例化编辑器
-UEDITOR_CONFIG.UEDITOR_HOME_URL = 'static/ueditor/';
-var ue=UE.getEditor('intr-editor',{
-	initialFrameWidth:400,
-	initialFrameHeight:300,
-	toolbars: [[
-            'source', '|', 'undo', 'redo', '|',
-            'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript','|', 
-            'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', 
-            'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
-            'directionalityltr', 'directionalityrtl', 'indent', '|',
-            'touppercase', 'tolowercase', '|',
-            'horizontal', '|',
-            'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
-            'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 
-            'link', 'unlink', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
-            'simpleupload', '|',
-            'customstyle', 'paragraph', 'fontfamily', 'fontsize'
-        ]],
-});
+var um=UM.getEditor('intr-editor');
 
 
 $(document).ready(function(){
