@@ -32,7 +32,7 @@ public class HsqlDb implements ServletContextListener {
      * @see ServletContextListener#contextInitialized(ServletContextEvent)
      */
     public void contextInitialized(ServletContextEvent arg0)  { 
-	    String path=arg0.getServletContext().getRealPath("/db/travel/");
+	    String path=arg0.getServletContext().getRealPath("/WEB-INF/db/travel/");
 	    String dbName="traveldb";
 	    server.setDatabaseName(0, dbName);
 	    server.setDatabasePath(0, path+dbName);

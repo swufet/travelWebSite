@@ -28,7 +28,7 @@
     <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
  	<!-- c3p0数据库连接池 -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
-		<!-- 数据库连接 -->
+		<!-- 数据库连接  47c593a5-1a6c-4e91-a225-ff36af3536a5-->
 		<property name="driverClass" value="org.hsqldb.jdbcDriver" />
 		<property name="jdbcUrl" value="jdbc:hsqldb:hsql://localhost/traveldb;shutdown=true" />
 		<property name="user" value="SA" />
