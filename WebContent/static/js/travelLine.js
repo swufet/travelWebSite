@@ -4,23 +4,19 @@ var ue=UE.getEditor('intr-editor',{
 	initialFrameWidth:400,
 	initialFrameHeight:300,
 	toolbars: [[
-            'source', '|', 'undo', 'redo', '|',
-            'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 
-            'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', 
-            'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
-            'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
-            'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
-            'directionalityltr', 'directionalityrtl', 'indent', '|',
-            'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase', '|',
-            'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
-            'simpleupload', 'insertimage', 'emotion', 'scrawl', 'attachment', 'map', 
-            'gmap', 'pagebreak', 'template', 'background', '|',
-            'horizontal', 'date', 'time', 'spechars',  'wordimage', '|',
-            'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 
-            'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 
-            'splittorows', 'splittocols', 'charts', '|',
-            'preview', 'searchreplace', 'help', 'drafts'
-        ]],
+	            'source', '|', 'undo', 'redo', '|',
+	            'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript','|', 
+	            'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', 
+	            'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
+	            'directionalityltr', 'directionalityrtl', 'indent', '|',
+	            'touppercase', 'tolowercase', '|',
+	            'horizontal', '|',
+	            'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
+	            'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 
+	            'link', 'unlink', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
+	            'simpleupload', '|',
+	            'customstyle', 'paragraph', 'fontfamily', 'fontsize'
+	        ]],
 });
 
 
@@ -49,7 +45,6 @@ function ajaxFileUpload() {
 			if (data == "") {
 				alert("图片上传失败！");
 			} else {
-					alert("图片上传成功!");
 					$("#coverImgPath").attr("value", data);
 					$("#title-preview-img").css("background-image", "url("+data+")");
 					var lineTitle=$("#line-title").val();
