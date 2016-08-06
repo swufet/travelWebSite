@@ -26,10 +26,11 @@ public class Test {
 //            Logger.getLogger(HsqlDBTestCase.class.getName()).log(Level.SEVERE,
 //                    null, ex);
 //        }
-		CipherUtil a = new CipherUtil();
-		String b=a.generatePassword("travel");
-		System.out.println(b);
-		System.out.println(a.validatePassword(b,"travel"));
+//		CipherUtil a = new CipherUtil();
+//		String b=a.generatePassword("travel");
+//		System.out.println(b);
+//		System.out.println(a.validatePassword(b,"travel"));
+		System.out.println(UUID.randomUUID());
 	}
 
 }
